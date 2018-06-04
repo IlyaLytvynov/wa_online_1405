@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 12px;
+    font-family: 'PF Din Display', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h1, h2, h3, h4, ul, ol, p {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1900px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0, .5);
+    margin: 0 auto;
+    min-height: 100vh;
+    padding-top: 50px;
+}
+
+.section__content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
