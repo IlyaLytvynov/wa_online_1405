@@ -1,0 +1,1 @@
+import './hw_7.scss';
