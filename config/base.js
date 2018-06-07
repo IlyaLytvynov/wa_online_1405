@@ -22,7 +22,7 @@ const baseConf = (_path) => {
             filename: `./${name}.html`,
         }));
         acc.push(new ExtractTextPlugin({
-            filename: `styles/[name].css`,
+            filename: `[name].css`,
             allChunks: false
         }));
 
@@ -46,7 +46,7 @@ const baseConf = (_path) => {
     return {
         entry,
         output: {
-            filename: 'js/[name].js',
+            filename: '[name].js',
         },
         module: {
             rules: [
