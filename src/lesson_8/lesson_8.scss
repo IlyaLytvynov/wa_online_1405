@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import '~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss';
+
+@import '../common/styles/variables.scss';
+@import '../common/styles/mixins.scss';
+@import '../common/styles/grid.scss';
+@import '../common/styles/base.scss';
+
+@import 'styles/header.scss';
+@import 'styles/catalog.scss';

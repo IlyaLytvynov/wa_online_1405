@@ -1,0 +1,95 @@
+.catalog {
+  padding-top: $header-height;
+  &__content {
+    @include pageWrapper;
+    padding-top: 40px;
+    @include mobile {
+      padding-top: $page-padding;
+    }
+  }
+  &__filters {
+    padding: 0 $page-padding;
+    display: flex;
+  }
+  &__products {
+    //padding-left: $page-padding;
+  }
+
+  &__item {
+    padding: 0 $page-padding;
+  }
+}
+
+.test {
+  background: yellow;
+  height: 100%;
+  width: 100%;
+}
+
+.product {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-weight: 300;
+  &__details {
+    margin-top: 12px;
+  }
+}
+
+.preview {
+  background-color: #F3F3F3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+
+  &__btn {
+    @include absoluteCenter;
+    border: none;
+    background: #33333a;
+    color: #FFF;
+    text-align: center;
+    display: block;
+    width: 180px;
+    font-size: 12px;
+    height: 50px;
+    line-height: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: opacity 0.3s;
+  }
+
+  &:hover .preview__overlay {
+    opacity: 0.4;
+    pointer-events: inherit;
+    visibility: visible;
+  }
+
+  &:hover .preview__btn {
+    opacity: 1;
+    visibility: visible;
+  }
+
+}
+

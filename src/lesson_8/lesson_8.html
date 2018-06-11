@@ -6,15 +6,18 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Lesson 6</title>
-<link href="lesson_7.css" rel="stylesheet"></head>
+</head>
 <body>
 <header class="page-header">
-  <nav class="global-nav global-nav_opened">
-    <button class="global-nav__control">TOGGLE</button>
+  <nav class="global-nav">
+    <button class="global-nav__toggle toggle">
+      <span class="toggle__bar"></span>
+      <span class="toggle__bar"></span>
+    </button>
     <ul class="global-nav__menu">
       <li class="global-nav__item global-nav__item_logo">
         <a class="global-nav__link" href="">
-          <img class="global-nav__logo logo" src="./assets/images/logo.svg" alt="">
+          <img class="global-nav__logo logo" src="../../assets/images/logo.svg" alt="">
         </a>
       </li>
       <li class="global-nav__item">
@@ -30,20 +33,29 @@
         <a href="" class="global-nav__link">Contacts</a>
       </li>
     </ul>
+    <div class="account-panel global-nav__account-panel">
+      <div class="account-panel__username">Welcome, Alex</div>
+      <div class="account-panel__avatar avatar">
+        <img src="../../assets/images/avatar.png" alt="">
+      </div>
+      <div class="account-panel__icon"></div>
+      <div class="account-panel__icon"></div>
+      <div class="account-panel__icon"></div>
+    </div>
   </nav>
 </header>
 <section class="catalog">
   <div class="grid-container catalog__content">
     <div class="catalog__filters sm-hidden xs-hidden col-md-3 col-lg-3 col-xl-3">
       <div class="test">
-          TEST
+        TEST
       </div>
     </div>
     <div class="grid-container catalog__products col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
       <div class="catalog__item col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
         <div class="product">
           <div class="product__preview preview">
-            <img class="preview__image" src="./assets/images/image2@2x.jpg"/>
+            <img class="preview__image" src="../../assets/images/image2@2x.jpg"/>
             <div class="preview__overlay">
             </div>
             <button class="preview__btn">quick view</button>
@@ -61,7 +73,7 @@
       <div class="catalog__item col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
         <div class="product">
           <div class="product__preview preview">
-            <img class="preview__image" src="./assets/images/image@2x.jpg"/>
+            <img class="preview__image" src="../../assets/images/image@2x.jpg"/>
             <div class="preview__overlay">
             </div>
             <button class="preview__btn">quick view</button>
@@ -79,7 +91,7 @@
       <div class="catalog__item col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
         <div class="product">
           <div class="product__preview preview">
-            <img class="preview__image" src="./assets/images/image2@2x.jpg"/>
+            <img class="preview__image" src="../../assets/images/image2@2x.jpg"/>
             <div class="preview__overlay">
             </div>
             <button class="preview__btn">quick view</button>
@@ -97,5 +109,12 @@
     </div>
   </div>
 </section>
-<script type="text/javascript" src="vendors.js"></script><script type="text/javascript" src="lesson_7.js"></script></body>
+<script>
+  const btn = document.querySelector('.toggle');
+  const nav = document.querySelector('.global-nav');
+  btn.addEventListener('click', () => {
+    nav.classList.toggle('global-nav_expand');
+  })
+</script>
+</body>
 </html>
