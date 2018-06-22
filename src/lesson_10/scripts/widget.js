@@ -5,7 +5,6 @@ export function widget() {
   const output = document.querySelector('.output');
 
   function clickHandler() {
-    console.log('CLICKED ON BTN ADD');
     const previousValue = parseFloat(output.textContent);
     const val = parseFloat(inputNative.value);
 
