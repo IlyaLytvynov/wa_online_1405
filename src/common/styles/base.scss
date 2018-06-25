@@ -7,10 +7,6 @@
 html {
   font-size: $font-size-default;
   font-family: 'Lato', sans-serif;
-  font-weight: 600;
-  @include mobile {
-    font-size: $font-size-default-mobile;
-  }
 }
 
 body {
