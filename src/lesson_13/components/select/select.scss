@@ -1,0 +1,77 @@
+$select-padding: 1rem;
+
+.select {
+  width: 280px;
+  text-align: right;
+  position: relative;
+  &__title {
+    width: 100%;
+    text-align: right;
+    border: none;
+    background-color: #1976d2;
+    padding:$select-padding/2 $select-padding ;
+    border-bottom: 1px solid #686868;
+    color: #FFF;
+    position: relative;
+    font-size: 1.0rem;
+    &::before {
+      content: '';
+      position: absolute;
+      transform: translateY(-50%) rotateZ(180deg);
+      transition: transform 400ms;
+      left: $select-padding;
+      top: 50%;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 5px 5px 5px;
+      border-color: transparent transparent #ffffff transparent;
+    }
+  }
+  &__options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 2px 7px 0 #63636375;
+    position: absolute;
+    width: 100%;
+    transform: scaleY(0);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
+    transform-origin: top center;
+    z-index: 4;
+    background: #FFF;
+  }
+
+  &__option {
+    cursor: pointer;
+    &_selected {
+      background-color: red;
+    }
+  }
+  &__control {
+    padding:$select-padding/2 $select-padding;
+    width: 100%;
+    text-align: right;
+    background-color: transparent;
+    border: none;
+    &:hover {
+      background-color: lighten(#1976d2, 40%);
+    }
+  }
+  &_expand {
+    .select {
+      &__options {
+        transform: scaleY(1);
+        opacity: 1;
+        visibility: visible;
+      }
+      &__title {
+        &:before {
+          transform: translateY(-50%) rotateZ(0);
+        }
+      }
+    }
+  }
+}

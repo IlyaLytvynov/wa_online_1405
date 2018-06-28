@@ -15,6 +15,7 @@ const baseConf = (_path) => {
     lesson_9: ['./src/lesson_9/lesson_9.js'],
     lesson_10: ['./src/lesson_10/lesson_10.js'],
     lesson_12: ['./src/lesson_12/lesson_12.js'],
+    lesson_13: ['./src/lesson_13/lesson_13.js'],
   };
 
   const plugins = Object.keys(entry).reduce((acc, name) => {
@@ -96,7 +97,7 @@ const baseConf = (_path) => {
         },
         {
           test: /\.(eot|ttf|woff|woff2)$/,
-          loader: 'file-loader?publicPath=./&name=assets/fonts/[name].[ext]'
+          loader: 'file-loader?publicPath=./&name=assets/fonts/[name].[ext]',
         }
       ]
     },
