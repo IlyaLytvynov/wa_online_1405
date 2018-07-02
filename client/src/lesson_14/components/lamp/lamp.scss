@@ -1,0 +1,9 @@
+.lamp {
+  border: 1px solid red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  &_toggle {
+    background-color: #3cff08;
+  }
+}

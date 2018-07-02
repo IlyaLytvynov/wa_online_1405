@@ -1,0 +1,27 @@
+{
+  "name": "ajax",
+  "version": "1.0.0",
+  "description": "Simple server for test ajax",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "IlyaLytvynov",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "istanbul": "^0.4.1",
+    "jquery": "^3.1.1",
+    "lodash": "^3.10.1",
+    "mocha": "^2.3.4",
+    "node-static": "^0.7.7"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4"
+  }
+}

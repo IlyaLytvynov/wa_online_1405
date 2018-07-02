@@ -1,0 +1,38 @@
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    width:80%;
+    max-width: 640px;
+    padding: 1em;
+}
+
+.lighter {
+    box-shadow: 1px 1px 3px 2px rgba(0,0,0,.3);
+    width: 80px;
+    margin: 10px auto;
+}
+
+.light {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px auto;
+    transition: background .5s
+}
+.switcher {
+    text-align: center;
+    background: red;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.lighter.active .switcher{
+    background: lime;
+}
+.red.active {background: red}
+.yellow.active {background: yellow}
+.green.active {background: green}

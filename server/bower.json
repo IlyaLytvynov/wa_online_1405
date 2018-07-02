@@ -1,0 +1,22 @@
+{
+  "name": "Lectures",
+  "description": "Simple server for test ajax",
+  "main": "public/main.js",
+  "authors": [
+    "IlyaLytvynov"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/IlyaLytvynov/LevelUp-AJAX",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0"
+  }
+}

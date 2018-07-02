@@ -1,0 +1,76 @@
+.widget {
+  width: 200px;
+  margin: 0 auto; }
+
+.output {
+  margin-top: 20px; }
+
+.btn {
+  padding: 10px 5px; }
+  .btn__success {
+    background-color: #54b817;
+    color: #FFF; }
+    .btn__success:active {
+      background-color: #75ff21; }
+
+.input {
+  display: -ms-flexbox;
+  display: flex;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.2); }
+  .input__native {
+    -ms-flex-preferred-size: 80%;
+        flex-basis: 80%;
+    border: none;
+    outline: none; }
+    .input__native::-webkit-outer-spin-button, .input__native::-webkit-inner-spin-button {
+      -webkit-appearance: none; }
+  .input__control {
+    border: none;
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%; }
+  .input__focus {
+    border: 1px solid red; }
+    .input__focus > .input__control {
+      background: grey; }
+.street-lighter {
+  width: 50px;
+  box-sizing: content-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  padding: 10px; }
+  .street-lighter__btn {
+    border: none;
+    padding: 10px;
+    background-color: #3cff08;
+    opacity: 0.85;
+    transition: all 0.5s; }
+  .street-lighter__light {
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 10px 0;
+    border-radius: 50%;
+    transition: all 0.5s; }
+    .street-lighter__light_red.street-lighter__light_active {
+      background-color: #ff2c00;
+      opacity: 0.85; }
+    .street-lighter__light_yellow.street-lighter__light_active {
+      background-color: #fffc03;
+      opacity: 0.85; }
+    .street-lighter__light_green.street-lighter__light_active {
+      background-color: #3cff08;
+      opacity: 0.85; }
+    .street-lighter__light_blue.street-lighter__light_active {
+      background-color: #0030ff;
+      opacity: 0.85; }
+  .street-lighter_disabled .street-lighter__btn {
+    background: #f08080;
+    opacity: 0.85; }
