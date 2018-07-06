@@ -6,7 +6,7 @@ const lampCollection = new LampManager(document.querySelector('#lamps-collection
 
 const xhr = new XMLHttpRequest();
 
-xhr.open('GET', 'http://localhost:4001/list');
+xhr.open('GET', '');
 xhr.send();
 xhr.onreadystatechange = () => {
   console.log('READY STATE CHANGED', xhr.readyState);

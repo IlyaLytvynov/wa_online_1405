@@ -32,7 +32,7 @@ var commentsModel = {
 
         items.push(data);
         console.log('add to Array');
-        return items;
+        return data;
     },
     getItems: function () {
         return items;
