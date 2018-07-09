@@ -81,3 +81,10 @@ $xl-screen: 1920px;
     @content;
   }
 }
+
+@mixin btnResetDefault {
+  background-color: transparent;
+  border: none;
+  font-size: $font-size-default;
+  display: inline-block;
+}

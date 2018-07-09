@@ -11,13 +11,16 @@ export class CheckBox extends React.Component {
     this.id =  generateId();
   }
 
-  render() {
-    console.log(this.props);
+  toggleCheked() {
+    this.props.onChange(!this.props.checked);
+  }
 
+  render() {
     return <label className='checkbox' htmlFor={this.id}>
       <input 
-        checked={this.props.checked} 
+        checked={this.props.checked}
         className='checkbox__input' 
+        onChange={this.toggleCheked.bind(this)}
         id={this.id}
         type="checkbox"/>
       <i className="checkbox__icon fas fa-check"></i>

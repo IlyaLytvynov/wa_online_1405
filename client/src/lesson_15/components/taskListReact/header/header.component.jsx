@@ -12,6 +12,9 @@ export class Header extends React.Component {
   submitHandler(e) {
     e.preventDefault();
     this.props.onSubmit(this.state.title);
+    this.setState({
+      title: ''
+    });
   }
 
   inputHandler(e) {
@@ -24,8 +27,8 @@ export class Header extends React.Component {
 
   render() {
     console.log(this.props);
-    return <form className='task-list__header' onSubmit={this.submitHandler.bind(this)}>
-    <h2>{this.listName}</h2>
+    return <form className='task-list-form' onSubmit={this.submitHandler.bind(this)}>
+    <h2 className='task-list-form__title'>{this.listName}</h2>
     <input type='text' value={this.state.title} onInput={this.inputHandler.bind(this)}/>
     <button>Add</button>
   </form>

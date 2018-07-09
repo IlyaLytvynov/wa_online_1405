@@ -26,8 +26,34 @@ export class TaskList extends React.Component {
     });
   }
 
-  submitForm(title) {
-    Ajax.post(URL, {title: title}, (resp) => {
+  updateTask(task) {
+    console.log(task);
+    Ajax.put(`${URL}/${task.id}`, task, (updatedTask) => {
+      this.setState((state) => {
+        state.list.forEach((task, i, tasks) => {
+          if (task.id === updatedTask.id) {
+            tasks[i] = updatedTask;
+          }
+        });
+        return state;
+      }); 
+    });
+  }
+
+  deleteTask(deletedTask) {
+    Ajax.delete(`${URL}/${deletedTask.id}`, () => {
+      const tasks = this.state.list.filter(task => {
+        return deletedTask.id !== task.id
+      });
+    
+      this.setState({
+        list: tasks
+      });
+    });
+  }
+
+  submitForm(inputValue) {
+    Ajax.post(URL, {title: inputValue}, (resp) => {
      this.addTask(resp);
     })
   }
@@ -35,7 +61,7 @@ export class TaskList extends React.Component {
   render() {
     return <div className='task-list'>
       <Header onSubmit = {this.submitForm.bind(this)}/>
-      <Content items = {this.state.list} />
+      <Content items = {this.state.list} onChange={this.updateTask.bind(this)} onDelete={this.deleteTask.bind(this)}/>
       <Footer />
     </div>
   }

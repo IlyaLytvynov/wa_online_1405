@@ -1,17 +1,24 @@
 import * as React from 'react';
-import { CheckBox } from '../../checkbox/checkBox.component.jsx';
+import { ListItem } from '../listItem/listItem.component.jsx';
 
 export class Content extends React.Component {
-  render() {
-    const listItems = [];
+  onItemChange(changedItem) {
+    console.log('CHNAGED AT CONTENT COMPONENT');
+    this.props.onChange(changedItem);
+  }
 
-    this.props.items.forEach((item) => {
-      const li = <li key = { item.id } id = { item.id }>
-      <CheckBox checked = { item.completed } test='hello world'/>
-      <span>{ item.title }</span>
-      </li>;
-      listItems.push(li);
-    });
+  onDelete(item) {
+    console.log(item);
+    this.props.onDelete(item);
+  }
+
+  render() {
+    const listItems = this.props.items.map(listItemObject => 
+    <ListItem
+      onChange={this.onItemChange.bind(this)}
+      onDelete={this.onDelete.bind(this)}
+      key={listItemObject.id} data={listItemObject}/>
+    );
 
     return <div className='task-list__content'>
       <ul>
