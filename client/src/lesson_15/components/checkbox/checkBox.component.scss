@@ -1,0 +1,25 @@
+$checkbox-size: 20px;
+
+.checkbox {
+  width: $checkbox-size;
+  height: $checkbox-size;
+  background-color: #dfdfdf;
+  border: 1px solid #5e5e5e;
+  border-radius: 3px;
+  display: inline-block;
+  &__icon {
+    opacity: 0;
+    visibility: hidden;
+    color: rgb(88, 146, 0)
+  }
+  &__input {
+    display: none;
+    &:checked {
+      + .checkbox__icon {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  
+}

@@ -1,5 +1,5 @@
 export class Ajax {
-  static get(url, responseCallback) {
+  static get(url, responseCallback, errorCallback) {
     const xhr = new XMLHttpRequest();
 
     xhr.open('GET', url);
@@ -10,7 +10,11 @@ export class Ajax {
         if (xhr.status === 200) {
           responseCallback(JSON.parse(xhr.response));
         } else {
-          throw Error(xhr.responseText);
+          if (errorCallback) {
+            errorCallback(xhr.responseText)
+          } else {
+            throw Error(xhr.responseText);
+          }
         }
       }
     }

@@ -1,18 +1,20 @@
 import * as React from 'react';
 import { Ajax } from '../../utils/ajax.util';
-import './taskListReact.scss';
+import { Header } from './header/header.component.jsx';
+import { Content } from './content/content.component.jsx';
 
-const URL = 'http://localhost:4001/list';
+import './taskListReact.scss';
+import { Footer } from './footer/footer.component.jsx';
+
+
+const URL = 'https://evening-dawn-11092.herokuapp.com/list';
 
 export class TaskList extends React.Component {
   constructor() {
     super();
-    this.listName = 'Task List';
     this.state = {
       list: [],
-      title: '',
-    };
-
+    }
     Ajax.get(URL, (resp) => {
       this.setState({list: resp});
     });
@@ -20,50 +22,21 @@ export class TaskList extends React.Component {
 
   addTask(task) {
     this.setState({
-      title: '',
       list: this.state.list.concat([task])
-    })
+    });
   }
 
-  submitForm(e) {
-    e.preventDefault();
-    Ajax.post(URL, {title: this.state.title}, (resp) => {
+  submitForm(title) {
+    Ajax.post(URL, {title: title}, (resp) => {
      this.addTask(resp);
     })
   }
 
-  inputHandler(e) {
-    const target = e.target;
-    console.log(target.value);
-    this.setState({
-      list: this.state.list,
-      title: target.value
-    });
-  }
-
   render() {
-    const listItems = [];
-
-    this.state.list.forEach((item) => {
-      const li = <li id={item.id}><input type="checkbox" checked={item.completed}/>{ item.title }</li>;
-      listItems.push(li);
-    });
-
     return <div className='task-list'>
-      <form className="task-list__header" onSubmit={this.submitForm.bind(this)}>
-        <h2>{this.listName}</h2>
-        <input type="text" value={this.state.title} onInput={this.inputHandler.bind(this)}/>
-        <button>Add</button>
-      </form>
-      <h2>{this.state.title}</h2>
-      <div className="task-list__content">
-        <ul>
-          { listItems }
-        </ul>
-      </div>
-      <div className="task-list__footer">
-        Footer
-      </div>
+      <Header onSubmit = {this.submitForm.bind(this)}/>
+      <Content items = {this.state.list} />
+      <Footer />
     </div>
   }
 }
