@@ -7,6 +7,7 @@ const fruites = require('./routes/fruites');
 const comments = require('./routes/comments');
 const calc = require('./routes/calc');
 const list = require('./routes/list');
+const menu = require('./routes/menu');
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -26,10 +27,9 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', routes);
-app.use('/fruites', fruites);
 app.use('/comments', comments);
-app.use('/calc', calc);
 app.use('/list', list);
+app.use('/menu', menu);
 
 app.get('/users', function (req, res) {
     console.log('Reuest recived!!!');

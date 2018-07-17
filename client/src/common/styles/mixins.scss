@@ -18,22 +18,6 @@ $xl-screen: 1920px;
   transform: translate(-50%, -50%);
 }
 
-@mixin absoluteCenterHorizontal {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-@mixin visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-@mixin hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
 @mixin xs-mobile {
   @media (max-width: #{$xs-screen - 0.1px}) {
     @content;
@@ -82,9 +66,23 @@ $xl-screen: 1920px;
   }
 }
 
+@mixin absoluteCenterHorizontal {
+  top: 50%;
+  transform: translateX(-50%);
+}
+
 @mixin btnResetDefault {
   background-color: transparent;
-  border: none;
-  font-size: $font-size-default;
   display: inline-block;
+  border: none;
+}
+
+@mixin hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin visible {
+  opacity: 1;
+  visibility: visible;
 }

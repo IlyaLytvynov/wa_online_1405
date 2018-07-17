@@ -1,0 +1,20 @@
+@import '../../../../common/styles/mixins.scss';
+
+.task-list-item {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  &__title {
+    flex: 1 1 90%;
+    padding-left: 10px;
+  }
+  &__control {
+    @include btnResetDefault
+  }
+  &_checked {
+    .task-list-item__title {
+      text-decoration: line-through;
+    }
+  }
+}

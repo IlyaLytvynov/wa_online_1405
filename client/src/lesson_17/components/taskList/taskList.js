@@ -1,11 +1,10 @@
-import { Ajax } from '../../utils/ajax.util';
-import { appConfig } from '../../../lesson_17/config';
+import {Ajax} from '../../utils/ajax.util';
 
 export class TaskList {
   constructor(target) {
     this.target = target;
     this.render();
-    Ajax.get(`${appConfig.apiUrl}/list`, this.renderListItems.bind(this))
+    Ajax.get('http://localhost:4001/list', this.renderListItems.bind(this))
   }
 
   render() {

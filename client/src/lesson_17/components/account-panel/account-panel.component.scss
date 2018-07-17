@@ -1,0 +1,31 @@
+@import '../../../common/styles/variables.scss';
+@import '../../../common/styles/mixins.scss';
+
+$account-panel-width: 100%;
+$account-panel-width-mobile: 100%;
+$account-panel-avatar-size: 50px;
+$account-panel-items-margin: 15px;
+
+.account-panel {
+  flex: 0 0 $account-panel-width;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  &__avatar {
+    width: $account-panel-avatar-size;
+    height: $account-panel-avatar-size;
+    overflow: hidden;
+    border-radius: 50%;
+    > img {
+      width: 100%;
+      display: block;
+    }
+  }
+  > * {
+    margin-left: $account-panel-items-margin;
+  }
+  @include mobile {
+    width: $account-panel-width-mobile;
+    flex-basis: $account-panel-width-mobile;
+  }
+}

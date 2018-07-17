@@ -1,0 +1,120 @@
+@import '../../../common/styles/variables.scss';
+@import '../../../common/styles/mixins.scss';
+
+$menu-width: 40%;
+$toggle-size: 25px;
+$expand-font-color: #FFF;
+
+@mixin collapsedMobile {
+  transform: scaleY(0);
+  @include hidden;
+}
+
+@mixin expandMobile {
+  transform: scaleY(1);
+  @include visible;
+}
+
+.global-nav {
+  @include pageWrapper;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.5s;
+  @include mobile {
+    background: #FFF;
+  }
+  &__toggle {
+    display: none;
+    @include absoluteCenterHorizontal;
+    left: $page-padding;
+    @include mobile {
+      display: inherit;
+    }
+  }
+  &__menu {
+    width: $menu-width;
+    flex: 0 0 40%;
+    display: flex;
+    justify-content: space-between;
+    @include mobile {
+      position: fixed;
+      width: 100%;
+      height: auto;
+      top: $header-height;
+      left: 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 1);
+      z-index: 1;
+      transition: all 0.5s;
+      padding: 0 $page-padding;
+      transform-origin: top;
+      @include collapsedMobile;
+    }
+  }
+  &__item {
+    height: 100%;
+    @include mobile {
+      display: flex;
+      justify-content: flex-start;
+      width: 100%;
+    }
+    &_logo {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+  &__link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: $header-link-color;
+    @include mobile {
+      color: $body-background-color;
+      width: 100%;
+      padding: $page-padding;
+      display: block;
+    }
+  }
+  &__account-panel {
+    display: flex;
+    align-items: center;
+    width: 40%;
+    min-width: 220px
+  }
+  &__logo {
+    width: 100%;
+  }
+  &_expand {
+    @include mobile {
+      background-color: rgba(0, 0, 0, 1);
+      border-bottom: 1px solid $expand-font-color;
+      .global-nav__menu {
+        background-color: rgba(0, 0, 0, 1);
+        @include expandMobile;
+      }
+      .toggle__bar {
+        background-color: $expand-font-color;
+      }
+      .global-nav__account-panel {
+        color: $expand-font-color;
+        transition: all 0.5s;
+      }
+      .global-nav__toggle {
+        > .toggle__bar {
+          transition: all 0.5s;
+          &:first-child {
+            transform: translateY(6px) rotate(-45deg);
+          }
+          &:last-child {
+            transform: translateY(-5px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}

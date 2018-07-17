@@ -1,0 +1,17 @@
+$toggle-size: 25px;
+
+.toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: $toggle-size;
+  height: $toggle-size;
+  padding: 0;
+  background: none;
+  border: none;
+  &__bar {
+    width: $toggle-size;
+    height: 1px;
+    background-color: $header-link-color;
+  }
+}
