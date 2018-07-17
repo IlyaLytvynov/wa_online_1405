@@ -1,0 +1,7 @@
+.about {
+  @include pageWrapper;
+    padding-top: 40px;
+    @include mobile {
+      padding-top: $page-padding;
+    }
+}

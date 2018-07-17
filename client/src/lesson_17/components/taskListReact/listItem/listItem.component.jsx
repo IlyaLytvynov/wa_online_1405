@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { CheckBox } from '../../checkbox/checkBox.component';
+import { CheckBox } from '../../checkbox/checkBox.component.jsx';
 
 import './listItem.component.scss';
 

@@ -4,21 +4,14 @@
 const express = require('express');
 const router = express.Router();
 
-const menus = [
-  {
-    title: 'home',
-    url: '/',
-    id: Date.now()
-  },
-  {
-    title: 'About',
-    url: '/about',
-    id: Date.now() + 10
-  },
-]
+const user = {
+  firstName: 'John',
+  secondName: 'Test',
+  age: 30
+}
 
 router.get('/', function (req, res) {
-  res.status(200).send(menus);
+  res.status(200).send(user);
 });
 
 module.exports = router;

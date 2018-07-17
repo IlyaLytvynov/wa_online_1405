@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Ajax } from '../../utils/ajax.util';
-import { Header } from './header/header.component';
-import { Content } from './content/content.component';
+import { Header } from './header/header.component.jsx';
+import { Content } from './content/content.component.jsx';
 
 import './taskListReact.scss';
-import { Footer } from './footer/footer.component';
+import { Footer } from './footer/footer.component.jsx';
 import { appConfig } from '../../config';
 
 const URL = `${appConfig.apiUrl}/list`;

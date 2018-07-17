@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { AccountPanel } from '../account-panel/account-panel.component.jsx';
 import { Ajax } from '../../utils/ajax.util.js';
-
 import './nav.component.scss';
 import { appConfig } from '../../config';
+import { NavLink } from 'react-router-dom';
 
 const URL = `${appConfig.apiUrl}/menu`
 
@@ -27,15 +27,14 @@ export class Nav extends React.Component {
     this.setState((state) => Object.assign(state, { isExpand: !state.isExpand }));
   }
 
-  close(e) {
-    e.preventDefault();
+  close() {
     this.setState((state) => Object.assign(state, { isExpand: false }));
   }
 
   render() {
     const listItems = this.state.menuItems.map((item) => {
       return <li id={ item.id } key={ item.id } className="global-nav__item">
-        <a href="" onClick={this.close.bind(this)} className="global-nav__link">{ item.title }</a>
+        <NavLink to={item.url} onClick={this.close.bind(this)} className="global-nav__link">{ item.title }</NavLink>
       </li>
     });
 
