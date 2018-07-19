@@ -15,10 +15,11 @@ export class Nav extends React.Component {
       menuItems: [],
       isExpand: false,
     };
-  }
+    this.close = this.close.bind(this);
+  } 
 
   componentDidMount() {
-    Ajax.get(URL, (resp) => {
+    Ajax.get(this.props.url || URL, (resp) => {
       this.setState((state) => Object.assign(state, { menuItems: resp }));
     });
   }
@@ -34,11 +35,11 @@ export class Nav extends React.Component {
   render() {
     const listItems = this.state.menuItems.map((item) => {
       return <li id={ item.id } key={ item.id } className="global-nav__item">
-        <NavLink to={item.url} onClick={this.close.bind(this)} className="global-nav__link">{ item.title }</NavLink>
+        <NavLink to={item.url} onClick={this.close} className="global-nav__link">{ item.title }</NavLink>
       </li>
     });
 
-    const classNames = ['global-nav'];
+    const classNames = ['global-nav', this.props.className];
     
     if (this.state.isExpand) {
       classNames.push('global-nav_expand');

@@ -21,4 +21,19 @@ router.get('/', function (req, res) {
   res.status(200).send(menus);
 });
 
+router.get('/second', function (req, res) {
+  res.status(200).send([
+    {
+      title: 'Sub menu item',
+      url: '/',
+      id: Date.now()
+    },
+    {
+      title: 'Sub menu oiyetm2',
+      url: '/about',
+      id: Date.now() + 10
+    },
+  ]);
+});
+
 module.exports = router;
